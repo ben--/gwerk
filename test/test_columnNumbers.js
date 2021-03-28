@@ -15,6 +15,11 @@ describe('columnLetter', function() {
     const edgeCases = [
         [27, 'AA'],
         [28, 'AB'],
+        [52, 'AZ'],
+        [53, 'BA'],
+        [79, 'CA'],
+        [677, 'ZA'],
+        [702, 'ZZ'],
     ]
     edgeCases.forEach(([i, s]) => {
         it('should return ' + s + ' for index ' + i, function() {

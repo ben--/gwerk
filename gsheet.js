@@ -18,11 +18,14 @@ function qText(sheetName, query) {
 function columnLetter(i) {
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     var out = ''
-    if (i > 26) {
-        out = 'A'
+
+    // Argument is 1-based, but implementation is zero-based
+    i -= 1
+    if (i >= 26) {
+        out = letters[Math.floor(i / 26) - 1]
         i = i % 26
     }
-    out += letters[i - 1]
+    out += letters[i]
     return out
 }
 
