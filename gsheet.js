@@ -15,6 +15,10 @@ function qText(sheetName, query) {
     ).join("")
 }
 
+function columnLetter(i) {
+    return 'A'
+}
+
 function columnNames(sheetName) {
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName)
     const nameRow = sheet.getRange(1,1,1,sheet.getMaxColumns()).getDisplayValues()[0]
@@ -23,4 +27,12 @@ function columnNames(sheetName) {
 
 function sheetName() {
     return SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getSheetName()
+}
+
+/* istanbul ignore if */
+if (typeof module === 'undefined') {
+ module = {} // eslint-disable-line no-global-assign
+}
+const gsheet = module.exports = {
+    columnLetter
 }

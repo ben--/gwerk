@@ -1,0 +1,23 @@
+{
+  "name": "gwerk",
+  "version": "1.0.0",
+  "description": "Google Workspace Utilities",
+  "main": "gsheet.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ben--/gwork-tools.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ben--/gwork-tools/issues"
+  },
+  "homepage": "https://github.com/ben--/gwork-tools#readme",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2"
+  }
+}
