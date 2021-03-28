@@ -16,13 +16,12 @@ function qText(sheetName, query) {
 }
 
 function columnLetter(i) {
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    var out = ''
-
     if (isNaN(i) || i < 1) {
         throw new Error('unknown column number: ' + i)
     }
 
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    var out = ''
     do {
         out = letters[(i - 1) % 26] + out
         i = Math.floor((i - 1) / 26)
@@ -42,7 +41,7 @@ function sheetName() {
 
 /* istanbul ignore if */
 if (typeof module === 'undefined') {
- module = {} // eslint-disable-line no-global-assign
+    module = {} // eslint-disable-line no-global-assign
 }
 const gsheet = module.exports = {
     columnLetter
