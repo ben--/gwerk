@@ -17,6 +17,9 @@ jobs:
       - name: Run tests
         run: npm test
 
+      - name: Generate lcov report
+        run: npm run coverage
+
       - name: Publish to Coveralls
         uses: coverallsapp/github-action@master
         with:
