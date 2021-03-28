@@ -16,7 +16,8 @@ function qText(sheetName, query) {
 }
 
 function columnLetter(i) {
-    return 'A'
+    const letters = 'AB'
+    return letters[i - 1]
 }
 
 function columnNames(sheetName) {
