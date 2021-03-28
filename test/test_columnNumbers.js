@@ -28,4 +28,17 @@ describe('columnLetter', function() {
             columnLetter(i).should.equal(s)
         })
     })
+
+    const throwCases = [
+        0,
+        -1,
+        undefined,
+        null,
+        'A',
+    ]
+    throwCases.forEach((input) => {
+        it('should throw an error for input ' + input, function() {
+            should.Throw(() => columnLetter(input), Error)
+        })
+    })
 })

@@ -19,6 +19,10 @@ function columnLetter(i) {
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     var out = ''
 
+    if (isNaN(i) || i < 1) {
+        throw new Error('unknown column number: ' + i)
+    }
+
     do {
         out = letters[(i - 1) % 26] + out
         i = Math.floor((i - 1) / 26)
