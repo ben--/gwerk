@@ -17,7 +17,13 @@ function qText(sheetName, query) {
 
 function columnLetter(i) {
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    return letters[i - 1]
+    var out = ''
+    if (i > 26) {
+        out = 'A'
+        i = i % 26
+    }
+    out += letters[i - 1]
+    return out
 }
 
 function columnNames(sheetName) {
