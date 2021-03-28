@@ -4,7 +4,8 @@
   "description": "Google Workspace Utilities",
   "main": "gsheet.js",
   "scripts": {
-    "test": "nyc mocha --timeout=3000"
+    "test": "nyc --reporter=html --reporter=text mocha --timeout=3000",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/ben--/gwork-tools#readme",
   "devDependencies": {
     "chai": "^4.3.4",
+    "coveralls": "^3.1.0",
     "mocha": "^8.3.2",
     "nyc": "^15.1.0"
   }
