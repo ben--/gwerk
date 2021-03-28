@@ -19,13 +19,10 @@ function columnLetter(i) {
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     var out = ''
 
-    // Argument is 1-based, but implementation is zero-based
-    i -= 1
-    if (i >= 26) {
-        out = letters[Math.floor(i / 26) - 1]
-        i = i % 26
-    }
-    out += letters[i]
+    do {
+        out = letters[(i - 1) % 26] + out
+        i = Math.floor((i - 1) / 26)
+    } while (i != 0)
     return out
 }
 

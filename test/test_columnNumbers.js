@@ -20,6 +20,8 @@ describe('columnLetter', function() {
         [79, 'CA'],
         [677, 'ZA'],
         [702, 'ZZ'],
+        [703, 'AAA'],
+        [16384, 'XFD'],
     ]
     edgeCases.forEach(([i, s]) => {
         it('should return ' + s + ' for index ' + i, function() {
