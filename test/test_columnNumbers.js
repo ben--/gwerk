@@ -8,8 +8,11 @@ describe('columnLetter', function() {
     it('should return A for index 1', function() {
         columnLetter(1).should.equal('A')
     })
+    it('should return Z for index 26', function() {
+        columnLetter(26).should.equal('Z')
+    })
 
-    const letters = [...'AB']
+    const letters = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
     letters.forEach((l, i) => {
         it('should return ' + l + ' for index ' + (i + 1), function() {
             columnLetter(i + 1).should.equal(l)

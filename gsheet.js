@@ -16,7 +16,7 @@ function qText(sheetName, query) {
 }
 
 function columnLetter(i) {
-    const letters = 'AB'
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     return letters[i - 1]
 }
 
