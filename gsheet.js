@@ -1,5 +1,4 @@
 function _fmap(sheetName) {
-    sheetName="Foo"
     const fieldsSheetName = sheetName + '_fields'
     const fieldsSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(fieldsSheetName)
     const fieldLetters = fieldsSheet.getDataRange().getDisplayValues()
@@ -23,5 +22,5 @@ function columnNames(sheetName) {
 }
 
 function sheetName() {
-    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getSheetName()
+    return SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getSheetName()
 }
