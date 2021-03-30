@@ -29,6 +29,16 @@ function columnLetter(i) {
     return out
 }
 
+function headermap(range) {
+    const out = {}
+    range[0].forEach((val, i) => {
+        if (val !== '') {
+            out[val] = columnLetter(i + 1)
+        }
+    })
+    return out
+}
+
 function columnNames(sheetName) {
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName)
     const nameRow = sheet.getRange(1,1,1,sheet.getMaxColumns()).getDisplayValues()[0]
@@ -49,5 +59,6 @@ if (typeof module === 'undefined') {
 }
 const gsheet = module.exports = {
     columnLetter,
+    headermap,
     litquery,
 }
