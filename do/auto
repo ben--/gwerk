@@ -4,5 +4,10 @@ base_cmd="$1"
 full_cmd="do/$1"
 shift
 
-git ls-files -co --exclude-standard . | grep -v "^$base_cmd\$" \
-    | entr -d "$full_cmd" "$@"
+while true; do
+    git ls-files -co --exclude-standard . | grep -v "^$base_cmd\$" \
+        | entr -d "$full_cmd" "$@"
+    if [ ${PIPESTATUS[2]} = 0 ]; then
+        break
+    fi
+done
