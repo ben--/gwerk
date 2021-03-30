@@ -39,10 +39,15 @@ function sheetName() {
     return SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getSheetName()
 }
 
+function litquery(x, query) {
+    return query
+}
+
 /* istanbul ignore if */
 if (typeof module === 'undefined') {
     module = {} // eslint-disable-line no-global-assign
 }
 const gsheet = module.exports = {
-    columnLetter
+    columnLetter,
+    litquery,
 }
