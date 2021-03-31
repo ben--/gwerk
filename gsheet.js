@@ -49,8 +49,15 @@ function sheetName() {
     return SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getSheetName()
 }
 
-function litquery(x, query) {
-    return query
+function litquery(range, query) {
+    const fieldLetters = headermap(range)
+
+    const parts = query.split('%')
+
+    return Array.from(
+        parts.entries(),
+        ([i, fragment]) => (i%2) ? fieldLetters[fragment] : fragment
+    ).join("")
 }
 
 /* istanbul ignore if */

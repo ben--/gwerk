@@ -23,9 +23,29 @@ describe('litquery', function() {
         actual.should.equal('select A')
     })
 
-    it.skip('replaces a %-delimited token with its column', function() {
+    it('replaces a %-delimited token with its column', function() {
         const actual = litquery(testRange, 'select %action%')
 
         actual.should.equal('select B')
+    })
+
+    it('replaces more than one token with their columns', function() {
+        const actual = litquery(testRange, 'select %id%, %action%')
+
+        actual.should.equal('select A, B')
+    })
+
+    it('is impervious to column reordering', function() {
+        const transposedRange = [['id', 'date', 'action']]
+
+        const actual = litquery(transposedRange, 'select %id%, %action%')
+
+        actual.should.equal('select A, C')
+    })
+
+    it('can handle duplicates of the same column', function() {
+        const actual = litquery(testRange, "select %id%, %action% where %action% = 'sale'")
+
+        actual.should.equal("select A, B where B = 'sale'")
     })
 })
