@@ -49,4 +49,5 @@ const gsheet = module.exports = {
     columnLetter,
     headermap,
     litquery,
+    sheetName,
 }
