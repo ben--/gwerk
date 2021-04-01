@@ -54,6 +54,10 @@ function litquery(range, query) {
 
     const parts = query.split('%')
 
+    if (parts.length % 2 === 0) {
+        throw new Error('Unterminated %token% found in input string')
+    }
+
     return Array.from(
         parts.entries(),
         ([i, fragment]) => (i%2) ? fieldLetters[fragment] : fragment

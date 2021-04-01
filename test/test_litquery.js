@@ -48,4 +48,8 @@ describe('litquery', function() {
 
         actual.should.equal("select A, B where B = 'sale'")
     })
+
+    it('throws when an unbalanced token is found', function() {
+        should.Throw(() => litquery(testRange, 'select %id'), Error)
+    })
 })
