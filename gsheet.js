@@ -1,20 +1,3 @@
-function _fmap(sheetName) {
-    const fieldsSheetName = sheetName + '_fields'
-    const fieldsSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(fieldsSheetName)
-    const fieldLetters = fieldsSheet.getDataRange().getDisplayValues()
-    return Object.fromEntries(fieldLetters)
-}
-
-function qText(sheetName, query) {
-    const fieldLetters = _fmap(sheetName)
-    const parts = query.split('%')
-
-    return Array.from(
-        parts.entries(),
-        ([i, fragment]) => (i%2) ? fieldLetters[fragment] : fragment
-    ).join("")
-}
-
 function columnLetter(i) {
     if (isNaN(i) || i < 1) {
         throw new Error('unknown column number: ' + i)
@@ -37,12 +20,6 @@ function headermap(range) {
         }
     })
     return out
-}
-
-function columnNames(sheetName) {
-    const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName)
-    const nameRow = sheet.getRange(1,1,1,sheet.getMaxColumns()).getDisplayValues()[0]
-    return nameRow.filter((val) => val !== '')
 }
 
 function sheetName() {
