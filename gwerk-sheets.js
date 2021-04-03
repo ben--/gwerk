@@ -45,7 +45,7 @@ function litquery(range, query) {
 if (typeof module === 'undefined') {
     module = {} // eslint-disable-line no-global-assign
 }
-const gsheet = module.exports = {
+const gwerkSheets = module.exports = {
     columnLetter,
     headermap,
     litquery,

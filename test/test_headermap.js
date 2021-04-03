@@ -1,9 +1,9 @@
 const should = require('chai').should()
 
-const gsheet = require('../gsheet.js')
+const gwerkSheets = require('../gwerk-sheets.js')
 
 describe('headermap', function() {
-    const headermap = gsheet.headermap
+    const headermap = gwerkSheets.headermap
 
     const testRange = [
         ['id', 'action', 'date'],

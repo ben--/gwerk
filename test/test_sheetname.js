@@ -1,10 +1,11 @@
 const should = require('chai').should()
 
 require('./mocks/SpreadsheetApp.js')
-const gsheet = require('../gsheet.js')
+
+const gwerkSheets = require('../gwerk-sheets.js')
 
 describe('sheetName', function() {
-    const sheetName = gsheet.sheetName
+    const sheetName = gwerkSheets.sheetName
 
     it('is called without arguments', function() {
         sheetName()

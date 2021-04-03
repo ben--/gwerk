@@ -1,9 +1,9 @@
 const should = require('chai').should()
 
-const gsheet = require('../gsheet.js')
+const gwerkSheets = require('../gwerk-sheets.js')
 
 describe('litquery', function() {
-    const litquery = gsheet.litquery
+    const litquery = gwerkSheets.litquery
 
     const testRange = [
         ['id', 'action', 'date'],

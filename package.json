@@ -2,7 +2,7 @@
   "name": "gwerk",
   "version": "1.0.0",
   "description": "Google Workspace Utilities",
-  "main": "gsheet.js",
+  "main": "gwerk-sheets.js",
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha --timeout=3000",
     "coverage": "nyc report --reporter=text-lcov > coverage/lcov.info"

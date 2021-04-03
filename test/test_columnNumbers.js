@@ -1,9 +1,9 @@
 const should = require('chai').should()
 
-const gsheet = require('../gsheet.js')
+const gwerkSheets = require('../gwerk-sheets.js')
 
 describe('columnLetter', function() {
-    const columnLetter = gsheet.columnLetter
+    const columnLetter = gwerkSheets.columnLetter
 
     const letters = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
     letters.forEach((l, i) => {
