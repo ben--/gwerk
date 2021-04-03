@@ -19,6 +19,10 @@
   "homepage": "https://github.com/ben--/gwerk#readme",
   "devDependencies": {
     "chai": "^4.3.4",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-googleappsscript": "^1.0.3",
+    "eslint-plugin-import": "^2.22.1",
     "mocha": "^8.3.2",
     "nyc": "^15.1.0",
     "sinon": "^10.0.0"
