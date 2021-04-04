@@ -4,6 +4,7 @@
   "description": "Google Workspace Utilities",
   "main": "gwerk-sheets.js",
   "scripts": {
+    "lint": "npx eslint gwerk-sheets.js",
     "test": "nyc --reporter=html --reporter=text mocha --timeout=3000",
     "coverage": "nyc report --reporter=text-lcov > coverage/lcov.info"
   },

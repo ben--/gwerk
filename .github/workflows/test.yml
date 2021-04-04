@@ -14,8 +14,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Run lint
+        run: npm run lint
+
       - name: Run tests
-        run: npm test
+        run: npm run test
 
       - name: Generate lcov report
         run: npm run coverage
