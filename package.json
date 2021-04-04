@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "npx eslint gwerk-sheets.js",
     "test": "nyc --reporter=html --reporter=text mocha --timeout=3000",
-    "coverage": "nyc report --reporter=text-lcov > coverage/lcov.info"
+    "coverage": "nyc report --reporter=text-lcov > coverage/lcov.info",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "eslint-plugin-import": "^2.22.1",
     "mocha": "^8.3.2",
     "nyc": "^15.1.0",
-    "sinon": "^10.0.0"
+    "sinon": "^10.0.0",
+    "husky": "^6.0.0"
   }
 }
