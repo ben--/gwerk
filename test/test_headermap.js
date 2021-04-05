@@ -31,7 +31,7 @@ describe('headermap', function () {
     it('only includes items from the input list', function () {
         const actual = headermap(testRange)
 
-        should.not.exist(actual.item)
+        Object.keys(actual).length.should.equal(3)
     })
 
     it('should only include entries for non-empty cells', function () {

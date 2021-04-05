@@ -22,6 +22,17 @@ function headermap(range) {
     return out
 }
 
+function headerinfo(range) {
+    const out = []
+    range[0].forEach((val, i) => {
+        if (val !== '') {
+            out.push([val, columnLetter(i + 1), i])
+        }
+    })
+
+    return out
+}
+
 function sheetName() {
     return SpreadsheetApp.getActiveSpreadsheet().getActiveSheet().getSheetName()
 }
@@ -47,6 +58,7 @@ if (typeof module === 'undefined') {
 }
 module.exports = {
     columnLetter,
+    headerinfo,
     headermap,
     litquery,
     sheetName,
