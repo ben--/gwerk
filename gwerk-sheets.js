@@ -1,14 +1,14 @@
 function columnLetter(i) {
-    if (isNaN(i) || i < 1) {
-        throw new Error('unknown column number: ' + i)
+    if (!Number.isInteger(i) || i < 1) {
+        throw new Error(`unknown column number: ${i}`)
     }
 
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    var out = ''
+    let out = ''
     do {
         out = letters[(i - 1) % 26] + out
         i = Math.floor((i - 1) / 26)
-    } while (i != 0)
+    } while (i !== 0)
     return out
 }
 
@@ -37,15 +37,15 @@ function litquery(range, query) {
 
     return Array.from(
         parts.entries(),
-        ([i, fragment]) => (i%2) ? fieldLetters[fragment] : fragment
-    ).join("")
+        ([i, fragment]) => ((i % 2) ? fieldLetters[fragment] : fragment),
+    ).join('')
 }
 
 /* istanbul ignore if */
 if (typeof module === 'undefined') {
     module = {} // eslint-disable-line no-global-assign
 }
-const gwerkSheets = module.exports = {
+module.exports = {
     columnLetter,
     headermap,
     litquery,
