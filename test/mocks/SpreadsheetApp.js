@@ -1,13 +1,11 @@
-var sinon = require('sinon')
+const { Spreadsheet } = require('./Spreadsheet.js')
 
-class Sheet {
-    getSheetName = sinon.fake.returns('fake sheet name')
+const activeSpreadsheet = new Spreadsheet()
+
+class SpreadsheetApp {
+    static getActiveSpreadsheet() {
+        return activeSpreadsheet
+    }
 }
 
-class Spreadsheet {
-    getActiveSheet = sinon.fake.returns(new Sheet())
-}
-
-SpreadsheetApp = {
-    getActiveSpreadsheet: sinon.fake.returns(new Spreadsheet())
-}
+global.SpreadsheetApp = SpreadsheetApp

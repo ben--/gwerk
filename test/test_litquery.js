@@ -2,8 +2,8 @@ const should = require('chai').should()
 
 const gwerkSheets = require('../gwerk-sheets.js')
 
-describe('litquery', function() {
-    const litquery = gwerkSheets.litquery
+describe('litquery', function () {
+    const { litquery } = gwerkSheets
 
     const testRange = [
         ['id', 'action', 'date'],
@@ -13,29 +13,29 @@ describe('litquery', function() {
 
     ]
 
-    it('takes a range and a string as its arguments', function() {
+    it('takes a range and a string as its arguments', function () {
         litquery(testRange, 'select A')
     })
 
-    it('returns a query with no special characters as-is', function() {
+    it('returns a query with no special characters as-is', function () {
         const actual = litquery(testRange, 'select A')
 
         actual.should.equal('select A')
     })
 
-    it('replaces a %-delimited token with its column', function() {
+    it('replaces a %-delimited token with its column', function () {
         const actual = litquery(testRange, 'select %action%')
 
         actual.should.equal('select B')
     })
 
-    it('replaces more than one token with their columns', function() {
+    it('replaces more than one token with their columns', function () {
         const actual = litquery(testRange, 'select %id%, %action%')
 
         actual.should.equal('select A, B')
     })
 
-    it('is impervious to column reordering', function() {
+    it('is impervious to column reordering', function () {
         const transposedRange = [['id', 'date', 'action']]
 
         const actual = litquery(transposedRange, 'select %id%, %action%')
@@ -43,13 +43,13 @@ describe('litquery', function() {
         actual.should.equal('select A, C')
     })
 
-    it('can handle duplicates of the same column', function() {
+    it('can handle duplicates of the same column', function () {
         const actual = litquery(testRange, "select %id%, %action% where %action% = 'sale'")
 
         actual.should.equal("select A, B where B = 'sale'")
     })
 
-    it('throws when an unbalanced token is found', function() {
+    it('throws when an unbalanced token is found', function () {
         should.Throw(() => litquery(testRange, 'select %id'), Error)
     })
 })
