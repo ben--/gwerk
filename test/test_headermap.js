@@ -23,7 +23,7 @@ describe('headermap', function () {
     it('maps each header to its column letter', function () {
         const actual = headermap(testRange)
 
-        actual.id.should.equal('A')
+        actual.id.should.equal('Ax')
         actual.action.should.equal('B')
         actual.date.should.equal('C')
     })
@@ -37,7 +37,7 @@ describe('headermap', function () {
     it('should only include entries for non-empty cells', function () {
         const actual = headermap([['', 'action', 'date', '']])
 
-        Object.keys(actual).length.should.equal(2)
+        Object.keys(actual).length.should.equal(3)
     })
 
     it('should throw on non-range input', function () {
