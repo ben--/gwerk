@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "npx eslint $(git ls-files '*.js')",
     "test": "nyc --reporter=html --reporter=text mocha --timeout=3000",
+    "test-github": "nyc --reporter=json mocha --reporter=mocha-github-actions-reporter --timeout=3000",
     "coverage": "nyc report --reporter=text-lcov > coverage/lcov.info",
     "prepare": "husky install"
   },

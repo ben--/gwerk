@@ -60,9 +60,7 @@ jobs:
         run: npm install mocha-github-actions-reporter
 
       - name: Run tests
-        run: npm run test
-        env:
-          MOCHA_REPORTER: mocha-github-actions-reporter
+        run: npm run test-github
 
       - name: Generate lcov report
         run: npm run coverage
