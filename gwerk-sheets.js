@@ -12,6 +12,12 @@ function columnLetter(i) {
     return out
 }
 
+function gxlookup(value, searchArray, returnArray) {
+    const i = searchArray.indexOf(value)
+
+    return returnArray[i]
+}
+
 function headermap(range) {
     const out = {}
     range[0].forEach((val, i) => {
@@ -58,6 +64,7 @@ if (typeof module === 'undefined') {
 }
 module.exports = {
     columnLetter,
+    gxlookup,
     headerinfo,
     headermap,
     litquery,
