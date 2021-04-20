@@ -12,8 +12,15 @@ function columnLetter(i) {
     return out
 }
 
-function gxlookup(value, searchArray, returnArray) {
-    const i = searchArray.findIndex((e) => e == value) // eslint-disable-line eqeqeq
+function gxlookup(value, lookupArray, returnArray, ifNotFound) {
+    const i = lookupArray.findIndex((e) => e == value) // eslint-disable-line eqeqeq
+    if (i === -1) {
+        if (typeof ifNotFound === 'undefined') {
+            throw new Error('Could not find value in lookupArray')
+        } else {
+            return ifNotFound
+        }
+    }
     return returnArray[i]
 }
 

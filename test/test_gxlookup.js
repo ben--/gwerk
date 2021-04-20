@@ -1,4 +1,4 @@
-require('chai').should()
+const should = require('chai').should()
 
 const gwerkSheets = require('../gwerk-sheets.js')
 
@@ -25,5 +25,15 @@ describe('gxlookup', function () {
         const actual = gxlookup('two', ['one', 'two'], ['first', 'second'])
 
         actual.should.equal('second')
+    })
+
+    it('returns an error if the search value is not found', function () {
+        should.Throw(() => gxlookup('three', ['one', 'two'], ['first', 'second']), Error)
+    })
+
+    it('returns the ifNotFound (fourth) argument if the serach value is not found', function () {
+        const actual = gxlookup('three', ['one', 'two'], ['first', 'second'], 'unknown')
+
+        actual.should.equal('unknown')
     })
 })
