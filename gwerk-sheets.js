@@ -13,8 +13,7 @@ function columnLetter(i) {
 }
 
 function gxlookup(value, searchArray, returnArray) {
-    const i = searchArray.indexOf(value)
-
+    const i = searchArray.findIndex((e) => e == value) // eslint-disable-line eqeqeq
     return returnArray[i]
 }
 

@@ -15,6 +15,12 @@ describe('gxlookup', function () {
         actual.should.equal('bar')
     })
 
+    it('does not require stric equality because google sheets doesnt', function () {
+        const actual = gxlookup(1, ['1'], ['one'])
+
+        actual.should.equal('one')
+    })
+
     it('scans the second array to find the first match', function () {
         const actual = gxlookup('two', ['one', 'two'], ['first', 'second'])
 
